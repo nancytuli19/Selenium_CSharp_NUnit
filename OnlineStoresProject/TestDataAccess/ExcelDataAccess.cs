@@ -6,11 +6,9 @@ using System.Data.OleDb;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UnitTestProject1.TestDataAccess.OnlineStore.TestDataAccess;
-
-namespace UnitTestProject1.TestDataAccess
+namespace OnlineStoresProject.TestDataAccess
 {
-    class ExcelDataAccess
+    public class ExcelDataAccess
     {
 
         public static string TestDataFileConnection()

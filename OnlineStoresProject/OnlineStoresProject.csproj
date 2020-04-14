@@ -112,13 +112,14 @@
     <Compile Include="Core\BrowserMethods.cs" />
     <Compile Include="Core\ExtentReport.cs" />
     <Compile Include="Core\PageMethods.cs" />
+    <Compile Include="PageObjects\MyAccountPage.cs" />
     <Compile Include="PageObjects\HomePage.cs" />
     <Compile Include="TestDataAccess\ExcelDataAccess.cs" />
     <Compile Include="TestDataAccess\UserData.cs" />
     <Compile Include="Tests\BaseTest.cs" />
-    <Compile Include="Tests\UnitTest1.cs" />
+    <Compile Include="Tests\SmokeTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tests\UnitTest2.cs" />
+    <Compile Include="Tests\SanityTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

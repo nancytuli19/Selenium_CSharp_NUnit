@@ -11,7 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UnitTestProject1.Core
+namespace OnlineStoresProject.Core
 {
         public class BrowserMethods
         {
@@ -29,12 +29,6 @@ namespace UnitTestProject1.Core
 
             public static void Init()
             {
-                /*extent = new ExtentReports();
-                htmlReporter = new ExtentHtmlReporter(TestContext.CurrentContext.TestDirectory + "\\Extent.html"););
-                extent.AttachReporter(htmlReporter);
-                htmlReporter.LoadConfig(@"C:\Users\nancytuli\source\repos\UnitTestProject1\UnitTestProject1\extent-config.xml");
-*/
-
             switch (browser)
                 {
                     case "Chrome":

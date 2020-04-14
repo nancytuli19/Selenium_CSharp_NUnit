@@ -6,8 +6,9 @@ using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using OnlineStoresProject.Tests;
 
-namespace UnitTestProject1.Core
+namespace OnlineStoresProject.Core
 {
     class ExtentReport
     {
@@ -39,8 +40,8 @@ namespace UnitTestProject1.Core
         {
             PageMethods.Test_ScreenShotBrowser(ExtentReport.screenshotPath, testMethodName, out String sName);
             Console.WriteLine("The screenshot name is " + sName);
-            UnitTest1.test.Log(LogStatus.Fail, message);
-            UnitTest1.test.Log(LogStatus.Fail, "Snapshot below: " + UnitTest1.test.AddScreenCapture(sName));
+            BaseTest.test.Log(LogStatus.Fail, message);
+            BaseTest.test.Log(LogStatus.Fail, "Snapshot below: " + BaseTest.test.AddScreenCapture(sName));
         }
     }
 }

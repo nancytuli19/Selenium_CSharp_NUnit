@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UnitTestProject1.Core
+namespace OnlineStoresProject.Core
 {
     class PageMethods : BrowserMethods
     {

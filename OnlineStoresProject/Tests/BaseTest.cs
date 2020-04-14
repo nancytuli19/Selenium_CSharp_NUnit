@@ -1,15 +1,11 @@
 ﻿using NUnit.Framework;
 using NUnit.Framework.Interfaces;
+using OnlineStoresProject.Core;
 using RelevantCodes.ExtentReports;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-using UnitTestProject1.Core;
 
-namespace UnitTestProject1.Tests
+
+namespace OnlineStoresProject.Tests
 {
     [TestFixture]
     public class BaseTest: BrowserMethods
@@ -48,11 +44,11 @@ namespace UnitTestProject1.Tests
         }
 
         [SetUp]
-        public void startTest()
+        public void StartTest()
         {
             try
             {
-                test = extent.StartTest(TestContext.CurrentContext.Test.MethodName + " started");
+                test = extent.StartTest(TestContext.CurrentContext.Test.MethodName);
                 BrowserMethods.Init();
             }
             catch(Exception e)
@@ -62,7 +58,7 @@ namespace UnitTestProject1.Tests
         }
 
         [TearDown]
-        public void endTest()
+        public void EndTest()
         {
             try
             {
