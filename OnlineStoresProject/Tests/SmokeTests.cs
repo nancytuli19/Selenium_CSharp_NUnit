@@ -19,6 +19,7 @@ namespace OnlineStoresProject
         public void LoginToTheApplicationWithCorrectCredentials()
         {
             test.AssignAuthor("Nancy Tuli");
+            BrowserMethods.getDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(120);
             BrowserMethods.Goto(ConfigurationManager.AppSettings["url"]);
             test.Log(LogStatus.Info, "Opened Browser");
             BrowserMethods.getDriver.Manage().Window.Maximize();

@@ -16,12 +16,9 @@ namespace OnlineStoresProject.Core
         public class BrowserMethods
         {
             private static IWebDriver webDriver;
-            /*public static ExtentReports extent = null;*/
             private static string baseURL = ConfigurationManager.AppSettings["url"];
             private static string browser = ConfigurationManager.AppSettings["browser"];
             private static string extentPath = ConfigurationManager.AppSettings["extentPath"];
-            /*public static ExtentTest extentTest = null;
-            public static ExtentHtmlReporter htmlReporter = null;*/
             public static string pth = System.Reflection.Assembly.GetCallingAssembly().CodeBase;
             public static string actualPath = pth.Substring(0, pth.LastIndexOf("bin"));
             public static string projectPath = new Uri(actualPath).LocalPath;
@@ -29,10 +26,13 @@ namespace OnlineStoresProject.Core
 
             public static void Init()
             {
+
+            var options = new ChromeOptions();
+            options.AddArgument("no-sandbox");
             switch (browser)
                 {
                     case "Chrome":
-                        webDriver = new ChromeDriver();
+                        webDriver = new ChromeDriver(ChromeDriverService.CreateDefaultService(), options, TimeSpan.FromMinutes(3));
                         break;
                     case "IE":
                         webDriver = new InternetExplorerDriver();
@@ -41,7 +41,8 @@ namespace OnlineStoresProject.Core
                         webDriver = new FirefoxDriver();
                         break;
                 }
-            }
+            webDriver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(3600);
+        }
             public static string Title
             {
                 get { return webDriver.Title; }
@@ -49,6 +50,11 @@ namespace OnlineStoresProject.Core
             public static IWebDriver getDriver
             {
                 get { return webDriver; }
+            }
+
+            public static void SetImplicitTimeout(int seconds)
+            {
+                webDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(seconds);
             }
 
             public static void Goto(string url)
